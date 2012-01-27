@@ -1,5 +1,29 @@
 <h2>{{ tumblr_content.blog.title }}</h2>
 <img src="{{ tumblr_avatar }}" alt="tumblr avatar"/>
 {% for post in tumblr_content.posts %}
-	<p>{{ post.type }}</p>
+        <p>
+        {{ post.type }} @ <a href="{{ post_url }}">{{ post.date }}</a>
+
+        {% if post.type == "text" %}
+                {{ post.body|safe }}
+        {% endif %}
+
+        {% if post.type == "quote" %}
+                {{ post.caption }}
+        {% endif %}
+
+        {% if post.type == "link" %}
+                {{ post.text }}
+        {% endif %}
+
+        {% if post.type == "answer" %}
+        {% endif %}
+
+        {% if post.type == "video" %}
+        {% endif %}
+
+        {% if post.type == "photo" %}
+        {% endif %}
+        </p>
 {% endfor %}
+
