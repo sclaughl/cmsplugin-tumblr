@@ -3,13 +3,14 @@
 {% for post in tumblr_content.posts %}
         <p>
         {{ post.type }} @ <a href="{{ post_url }}">{{ post.date }}</a>
-
+        </p>
+        <p>
         {% if post.type == "text" %}
                 {{ post.body|safe }}
         {% endif %}
 
         {% if post.type == "quote" %}
-                {{ post.caption }}
+                {{ post.text|safe }}
         {% endif %}
 
         {% if post.type == "link" %}
