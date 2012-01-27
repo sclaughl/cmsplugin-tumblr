@@ -1,0 +1,5 @@
+<h2>{{ tumblr_content.blog.title }}</h2>
+<img src="{{ tumblr_avatar }}" alt="tumblr avatar"/>
+{% for post in tumblr_content.posts %}
+	<p>{{ post.type }}</p>
+{% endfor %}
