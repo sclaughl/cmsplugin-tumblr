@@ -6,7 +6,7 @@ import tumblr
 class CMSTumblrPlugin(CMSPluginBase):
 	model = TumblrPlugin
 	name = "Tumblr"
-	render_template = "tumblr/tumblr.html"
+	render_template = "cms/plugins/tumblr.html"
 
 	def render(self, context, instance, placeholder):
 		context.update({
