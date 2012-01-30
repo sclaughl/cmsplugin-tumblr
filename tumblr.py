@@ -12,10 +12,14 @@ def get_avatar(hostname):
 			"method" : "avatar" }
 	return avatar_url
 
-def get_posts(hostname, tag, limit):
+def get_posts(hostname, tag=None, limit=None):
 	posts_url = base_url % {
 			"base-hostname" : hostname,
 			"method" : "posts" }
+
+    if tag: qs_params["tag"] = tag
+    if limit: qs_params["limit"] = limit
+
 	posts_url += "?%s" % urllib.urlencode(qs_params)
 
 	response = urllib2.urlopen(posts_url).read()
