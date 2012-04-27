@@ -1,2 +1,4 @@
 *.pyc
 
+dist
+cmsplugin_tumblr.egg-info
